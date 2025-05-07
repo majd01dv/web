@@ -157,4 +157,3 @@ function loadCategoryGames(category) {
     });
 }
 
-
