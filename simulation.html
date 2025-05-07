@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Games | Game Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="#">Support</a>
+            </nav>
+            <button class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="category-header">
+            <h1 id="category-title">Action Games</h1>
+            <p>Browse our collection of <span id="category-name">action</span> games</p>
+        </section>
+
+        <section class="games-section">
+            <div class="games-grid" id="category-games">
+                <!-- Games will be loaded by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Get current category from URL
+        const currentPage = window.location.pathname.split('/').pop();
+        const categoryMap = {
+            'action.html': 'Action',
+            'adventure.html': 'Adventure',
+            'shooter.html': 'Shooter',
+            'simulation.html': 'Simulation',
+            'racing.html': 'Racing'
+        };
+        
+        const currentCategory = categoryMap[currentPage] || 'All';
+        
+        // Set category title
+        document.getElementById('category-title').textContent = `${currentCategory} Games`;
+        document.getElementById('category-name').textContent = currentCategory.toLowerCase();
+        
+        // Load games for this category
+        loadCategoryGames(currentCategory);
+    </script>
+</body>
+</html>
