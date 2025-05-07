@@ -158,21 +158,21 @@ function loadCategoryGames(category) {
 }
 
 // Update your existing loadPopularGames function to use gameData
-function loadPopularGames() {
-    const gamesGrid = document.querySelector('.games-grid');
-    gamesGrid.innerHTML = '';
+// function loadPopularGames() {
+//     const gamesGrid = document.querySelector('.games-grid');
+//     gamesGrid.innerHTML = '';
     
-    // Show first 6 games as popular (or you could add a 'popular' property to your game data)
-    const popularGames = gameData.slice(0, 6);
+//     // Show first 6 games as popular (or you could add a 'popular' property to your game data)
+//     const popularGames = gameData.slice(0, 6);
     
-    popularGames.forEach(game => {
-        const gameItem = document.createElement('div');
-        gameItem.className = 'game-item';
-        gameItem.innerHTML = `
-            <img src="${game.image}" alt="${game.name}">
-            <div class="game-name">${game.name}</div>
-        `;
-        gameItem.addEventListener('click', () => showGameDetails(game));
-        gamesGrid.appendChild(gameItem);
-    });
-}
+//     popularGames.forEach(game => {
+//         const gameItem = document.createElement('div');
+//         gameItem.className = 'game-item';
+//         gameItem.innerHTML = `
+//             <img src="${game.image}" alt="${game.name}">
+//             <div class="game-name">${game.name}</div>
+//         `;
+//         gameItem.addEventListener('click', () => showGameDetails(game));
+//         gamesGrid.appendChild(gameItem);
+//     });
+// }
